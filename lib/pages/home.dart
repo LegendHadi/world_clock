@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:world_clock/services/world_time.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -65,15 +65,15 @@ class _HomeState extends State<Home> {
                 // onPressed: () {
                 //   Navigator.pushNamed(context, '/location');
                 // },
-                icon: Icon(Icons.edit_location),
-                label: Text('Edit Location'),
+                icon: const Icon(Icons.edit_location),
+                label: const Text('Edit Location'),
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  elevation: MaterialStateProperty.all(0),
+                      WidgetStateProperty.all(Colors.transparent),
+                  elevation: WidgetStateProperty.all(0),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -90,7 +90,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(

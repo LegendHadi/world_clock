@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Error extends StatefulWidget {
-  const Error({Key? key}) : super(key: key);
+  const Error({super.key});
 
   @override
   State<Error> createState() => _ErrorState();
@@ -10,7 +10,7 @@ class Error extends StatefulWidget {
 class _ErrorState extends State<Error> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.red,
       body: Center(
         child: Column(

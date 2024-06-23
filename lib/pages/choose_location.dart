@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:world_clock/services/world_time.dart';
 
 class ChooseLocation extends StatefulWidget {
-  const ChooseLocation({Key? key}) : super(key: key);
+  const ChooseLocation({super.key});
 
   @override
   State<ChooseLocation> createState() => _ChooseLocationState();
@@ -40,6 +40,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
     //   'time': instance.time,
     //   'isDaytime': instance.isDaytime,
     // });
+    // ignore: use_build_context_synchronously
     Navigator.pop(context, instance);
   }
 
@@ -70,7 +71,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
     // print('build function ran');
     return Scaffold(
       appBar: AppBar(
-        title: Text('Choose a Location'),
+        title: const Text('Choose a Location'),
         centerTitle: true,
         backgroundColor: Colors.blue[800],
         // automaticallyImplyLeading: false,
@@ -84,7 +85,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
               color: Colors.tealAccent[100],
               child: ListTile(
                 onTap: () {
-                  print(locations[index].location);
+                  debugPrint(locations[index].location);
                   updateTime(index);
                 },
                 title: Text(locations[index].location),

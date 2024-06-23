@@ -18,7 +18,7 @@ class WorldTime {
       Response response =
           await get(Uri.parse('http://worldtimeapi.org/api/timezone/$url'));
       Map data = jsonDecode(response.body);
-      print(data);
+      debugPrint(data.toString());
 
       // get properties from data
       String datetime = data['datetime'];
@@ -28,7 +28,7 @@ class WorldTime {
 
       // create Datetime object
       DateTime now = DateTime.parse(datetime);
-      print(now);
+      debugPrint(now.toString());
       if (data['utc_offset'].toString().startsWith('+')) {
         now = now.add(Duration(
             hours: int.parse(offset.split(':').first),
@@ -47,7 +47,7 @@ class WorldTime {
       debugPrint('get time $isDaytime / $time');
       // time = now.toString();
     } catch (e) {
-      print('caught error: $e');
+      debugPrint('caught error: $e');
       time = 'could not get time data';
       // Navigator.pushNamed(context, '/location');
     }

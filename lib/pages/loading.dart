@@ -5,7 +5,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 // import 'dart:convert';
 
 class Loading extends StatefulWidget {
-  const Loading({Key? key}) : super(key: key);
+  const Loading({super.key});
 
   @override
   State<Loading> createState() => _LoadingState();
@@ -19,6 +19,7 @@ class _LoadingState extends State<Loading> {
         location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
     await instance.getTime();
     // debugPrint('setup ${instance.isDaytime}');
+    // ignore: use_build_context_synchronously
     Navigator.pushReplacementNamed(context, '/home', arguments: instance
         //     arguments: {
         //   'location': instance.location,
@@ -68,7 +69,7 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.blue[900],
-        body: Center(
+        body: const Center(
           child: SpinKitSpinningLines(
             color: Colors.white,
             size: 80.0,

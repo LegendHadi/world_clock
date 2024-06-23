@@ -7,9 +7,9 @@ import 'package:world_clock/pages/error.dart';
 void main() => runApp(MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => Loading(),
-        '/home': (context) => Home(),
-        '/location': (context) => ChooseLocation(),
-        '/error': (context) => Error(),
+        '/': (context) => const Loading(),
+        '/home': (context) => const Home(),
+        '/location': (context) => const ChooseLocation(),
+        '/error': (context) => const Error(),
       },
     ));
