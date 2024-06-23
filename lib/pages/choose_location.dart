@@ -33,48 +33,17 @@ class _ChooseLocationState extends State<ChooseLocation> {
   void updateTime(index) async {
     WorldTime instance = locations[index];
     await instance.getTime();
-    // navigate to home screen
-    // Navigator.pop(context,{
-    //   'location': instance.location,
-    //   'flag': instance.flag,
-    //   'time': instance.time,
-    //   'isDaytime': instance.isDaytime,
-    // });
     // ignore: use_build_context_synchronously
     Navigator.pop(context, instance);
   }
 
-  // int counter= 0;
-
-  // void getData () async {
-  //
-  //   String username = await Future.delayed(Duration(seconds: 5), () {
-  //     return 'Hadi';
-  //   });
-  //
-  //   String bio = await Future.delayed(Duration(seconds: 2), () {
-  //     return 'I am legend';
-  //   });
-  //
-  //   print('$username - $bio');
-  // }
-  //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   getData();
-  //   print('initState function ran');
-  // }
-
   @override
   Widget build(BuildContext context) {
-    // print('build function ran');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Choose a Location'),
         centerTitle: true,
         backgroundColor: Colors.blue[800],
-        // automaticallyImplyLeading: false,
       ),
       body: ListView.builder(
         itemCount: locations.length,
@@ -85,7 +54,6 @@ class _ChooseLocationState extends State<ChooseLocation> {
               color: Colors.tealAccent[100],
               child: ListTile(
                 onTap: () {
-                  debugPrint(locations[index].location);
                   updateTime(index);
                 },
                 title: Text(locations[index].location),
@@ -98,14 +66,6 @@ class _ChooseLocationState extends State<ChooseLocation> {
           );
         },
       ),
-      // body: ElevatedButton(
-      //   onPressed: () {
-      //     setState(() {
-      //       counter +=1 ;
-      //     });
-      //   },
-      //   child: Text('counter is $counter'),
-      // ),
     );
   }
 }
