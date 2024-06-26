@@ -18,7 +18,7 @@ class WorldTime {
       Map data = jsonDecode(response.body);
 
       String datetime = data['datetime'];
-      String offset = data['utc_offset'].substring(1, 3);
+      String offset = data['utc_offset'].substring(1, 6);
       DateTime now = DateTime.parse(datetime);
       if (data['utc_offset'].toString().startsWith('+')) {
         now = now.add(Duration(
